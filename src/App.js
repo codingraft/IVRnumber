@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import { useState } from "react";
 import './App.css';
+import About from './components/About';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Benefit from './components/Benefit';
+import PlanAndPricing from './components/PlanAndPricing';
+import Contact from './components/Contact';
+import Slider from './components/Slider';
+
+import Popup from './components/Popup';
 
 function App() {
+    const [showSide, setShowSide] = useState(false);
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Slider showSide={showSide} setShowSide={setShowSide}/>
+      <Popup />
+       <Header showSide={showSide} setShowSide={setShowSide}/>
+       <Hero />
+       <About />
+       <Features />
+       <Benefit />
+       <PlanAndPricing />
+       <Contact />
     </div>
   );
 }
